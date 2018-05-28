@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Festival LES DÉBROUSSAILLEUSES</title>
+  <meta name="description" content="Débroussailler : défricher, éclaircir ce qui est confus. 2 jours pour se débrousailler l'esprit !">
+  <meta name="keywords" content="Trémentines, festival,concerts,Les ELLES,SURBOUM TORRIDE,FANFARES,EXPOS,ARTS EQUESTRES,IMPROMPTUS,La grange aux Arts,Photaumatic,SALON de TATOUAGE,MARCHÉ DE PRODUCTEURS,LECTURES,ATELIERS ENFANTS,The HORNY WACKERS,PROJECTIONS,DÉBATS CITOYENS,CONFÉRENCE GESTICULEE,Les Mutins de Pangée, Les chineurs de son">
+  <link rel="icon" type="image/png" href="images/debr-ico2.png" />
+  <meta property="og:url" content="http://lesdebroussailleuses.docteurparadi.com"/>
+  <meta property="og:image" content="http://lesdebroussailleuses.docteurparadi.com/assets/banniere.png"/>
+
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/BenBen_style.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <form action="./php/create_qr_code.php"  method="post">
+      <fieldset>
+        Nom :
+        <input type="text" name="firstname" placeholder="Nom">
+        <br>
+        Prénom :
+        <input type="text" name="lastname" placeholder="Prénom">
+        <br>
+        email :
+        <input type="email" name="email" placeholder="xxx@yy.zzz">
+        <br>
+        telephone :
+        <input type="phone" name="phone" placeholder="0600000000">
+      </fieldset>
+      <hr>
+      <fieldset>
+        <p>SAMEDI</p>
+        Nb adultes : <select name="nb_adultes_samedi">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        - Nb enfants : <select name="nb_kids_samedi">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <br>
+        <p>DIMANCHE</p>
+        Nb adultes : <select name="nb_adultes_dimanche">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        - Nb enfants : <select name="nb_kids_dimanche"><br>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </fieldset>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
