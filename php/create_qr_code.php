@@ -1,29 +1,37 @@
+<!--
+ http://api.qrserver.com/v1/
+ doc http://goqr.me/api/doc/ -->
+ <!DOCTYPE html>
+ <html lang="fr">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Festival LES DÉBROUSSAILLEUSES</title>
+   <meta name="description" content="Débroussailler : défricher, éclaircir ce qui est confus. 2 jours pour se débrousailler l'esprit !">
+   <meta name="keywords" content="Trémentines, festival,concerts,Les ELLES,SURBOUM TORRIDE,FANFARES,EXPOS,ARTS EQUESTRES,IMPROMPTUS,La grange aux Arts,Photaumatic,SALON de TATOUAGE,MARCHÉ DE PRODUCTEURS,LECTURES,ATELIERS ENFANTS,The HORNY WACKERS,PROJECTIONS,DÉBATS CITOYENS,CONFÉRENCE GESTICULEE,Les Mutins de Pangée, Les chineurs de son">
+   <link rel="icon" type="image/png" href="images/debr-ico2.png" />
+   <meta property="og:url" content="http://lesdebroussailleuses.docteurparadi.com"/>
+   <meta property="og:image" content="http://lesdebroussailleuses.docteurparadi.com/assets/banniere.png"/>
+
+   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+   <link href="assets/css/BenBen_style.css" rel="stylesheet">
+
+ </head>
+ <body>
+
+<h3>QRcode</h3>
 <?php
-// http://api.qrserver.com/v1/
-// doc http://goqr.me/api/doc/
 
-https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
+if ()
 
-$url = 'https://api.qrserver.com/v1/create-qr-code/';
-$data = array('ecc'=>'M', 'color'=>'FF0000', 'size' => '300x300', 'data' => 'value2');
+if (file_exists('./image.php')) {
+  require './image.php';
+ echo '<img src="../QRcodes/qr.png" />';
+} else {
+  echo 'No image generation...';
+}
+?>
 
-// use key 'http' even if you send the request to https://...
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data)
-    )
-);
-$context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-if ($result === FALSE) { /* Handle error */ }
-base64_encode($result);
-$data = base64_encode($result);
 
-list($type, $data) = explode(';', $data);
-$data = base64_decode($data);
-
-file_put_contents('/tmp/image.png', $data);
-
-var_dump($result);
+<p>end</p>
+</body>
