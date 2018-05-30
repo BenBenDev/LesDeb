@@ -18,11 +18,11 @@
   <div class="container">
     <form action="./php/create_qr_code.php"  method="post">
       <fieldset>
-        Nom :
-        <input type="text" name="firstname" placeholder="Nom">
-        <br>
         Prénom :
-        <input type="text" name="lastname" placeholder="Prénom">
+        <input type="text" name="firstname" placeholder="Prénom">
+        <br>
+        Nom :
+        <input type="text" name="lastname" placeholder="Nom">
         <br>
         email :
         <input type="email" name="email" placeholder="xxx@yy.zzz">
@@ -33,14 +33,14 @@
       <hr>
       <fieldset>
         <p>SAMEDI</p>
-        Nb adultes : <select name="nb_adultes_samedi">
-          <option value="0">0</option>
+        Nb adultes : <select name="nb_adults_sat">
+          <option value="0" selected>0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
-        - Nb enfants : <select name="nb_kids_samedi">
+        - Nb enfants : <select name="nb_kids_sat">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -49,14 +49,14 @@
         </select>
         <br>
         <p>DIMANCHE</p>
-        Nb adultes : <select name="nb_adultes_dimanche">
+        Nb adultes : <select name="nb_adults_sun">
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
-        - Nb enfants : <select name="nb_kids_dimanche"><br>
+        - Nb enfants : <select name="nb_kids_sun"><br>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
