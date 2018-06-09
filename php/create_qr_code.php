@@ -13,8 +13,8 @@ doc http://goqr.me/api/doc/ -->
 		<meta property="og:url" content="http://lesdebroussailleuses.docteurparadi.com"/>
 		<meta property="og:image" content="http://lesdebroussailleuses.docteurparadi.com/assets/banniere.png"/>
 
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-		<link href="assets/css/BenBen_style.css" rel="stylesheet">
+		<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../assets/css/BenBen_style.css" rel="stylesheet">
 
 	</head>
 	<body>
@@ -27,6 +27,7 @@ doc http://goqr.me/api/doc/ -->
 
 		if (!isset($_POST['firstname']) ) {
 			echo ("No data from the form (firstname is required). Can't process");
+			die();
 		} else {
 
 			$firstname = htmlspecialchars($_POST['firstname']);
@@ -37,6 +38,7 @@ doc http://goqr.me/api/doc/ -->
 			$nb_kids_sat= ($_POST['nb_kids_sat']);
 			$nb_adults_sun= ($_POST['nb_adults_sun']);
 			$nb_kids_sun= ($_POST['nb_kids_sun']);
+			$security= ($_POST['security']);
 
 			$firstname = ($firstname) ? $firstname : "no data";
 			$lastname = ($lastname) ? $lastname : "no data";
@@ -46,9 +48,13 @@ doc http://goqr.me/api/doc/ -->
 			$nb_kids_sat = ($nb_kids_sat) ? $nb_kids_sat : 0;
 			$nb_adults_sun = ($nb_adults_sun) ? $nb_adults_sun : 0;
 			$nb_kids_sun = ($nb_kids_sun) ? $nb_kids_sun : 0;
-			$ecrypted_data = AESencrypt( $email . $phone . $firstname . $lastname . $nb_adults_sat . $nb_kids_sat . $nb_adults_sun . $nb_kids_sun);
-
-			$pre_data = array(
+			//			$encrypted_data = AESencrypt( $email . $phone . $firstname . $lastname . $nb_adults_sat . $nb_kids_sat . $nb_adults_sun . $nb_kids_sun);
+			//	$encrypted_data =($security) ? $security : "PB security";
+			$encrypted_data = $security;
+		
+			//  TODO    real PHP encoding  instead of jacascript encyption !!
+				
+				$pre_data = array(
 				'firstname' => $firstname,
 				'lastname' => $lastname,
 				'email' => $email,
@@ -57,13 +63,14 @@ doc http://goqr.me/api/doc/ -->
 				'nb_kids_sat' => $nb_kids_sat,
 				'nb_adults_sun' => $nb_adults_sun,
 				'nb_kids_sun' => $nb_kids_sun,
-				'security' => $ecrypted_data
+				'security' => $encrypted_data
 			);
 
 			$post_data = json_encode($pre_data);
 
 		}
-
+		echo $security;
+		var_dump ($pre_data);
 		if (file_exists('./image.php')) {
 			//generation of QRcode + file name
 			$suffix = time();      
